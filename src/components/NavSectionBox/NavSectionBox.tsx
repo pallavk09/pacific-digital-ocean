@@ -1,7 +1,7 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
 
-const SectionBox = (props: any) => {
+const NavSectionBox = (props: any) => {
   return (
     <Paper
       sx={{
@@ -10,11 +10,12 @@ const SectionBox = (props: any) => {
         padding: (theme) => theme.spacing(1, 2),
         width: "100%",
         margin: (theme) => theme.spacing(0.5),
+        bgcolor: "#f9f9f9",
       }}
     >
       <Box display={"flex"} flexDirection="column" gap={2}>
         <Box textAlign={"left"}>
-          <Typography variant="body2">
+          <Typography variant="body2" fontSize={18} color="#FF825B">
             <strong>{props.title}</strong>
           </Typography>
         </Box>
@@ -32,4 +33,4 @@ const SectionBox = (props: any) => {
   );
 };
 
-export default SectionBox;
+export default NavSectionBox;

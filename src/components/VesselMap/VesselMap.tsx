@@ -90,7 +90,7 @@ const VesselMap: React.FC<RouteProps> = ({ plannedRoute, actualRoute }) => {
   // }, [currentIndex, plannedRoute]);
 
   return (
-    <MapContainer style={{ height: "600px", width: "100%" }}>
+    <MapContainer style={{ height: "50rem", width: "100%" }}>
       <SetMapView center={initialPosition} zoom={initialZoom} />
       <ResetViewControl title="Reset view" icon="url(/img/icons/refresh.png)" />
       <TileLayer

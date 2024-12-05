@@ -36,7 +36,7 @@ const RootLayout: React.FC = () => {
       <CssBaseline />
 
       {/* Header */}
-      <AppBar position="fixed" sx={{ zIndex: 1201 }}>
+      <AppBar position="fixed" sx={{ zIndex: 1201, bgcolor: "#f9f9f9" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -44,7 +44,7 @@ const RootLayout: React.FC = () => {
             onClick={handleDrawerToggle}
             edge="start"
           >
-            <MenuIcon />
+            <MenuIcon sx={{ color: "#2E186A" }} />
           </IconButton>
           <Box
             display={"flex"}
@@ -53,16 +53,16 @@ const RootLayout: React.FC = () => {
             width={"100%"}
             p={2}
           >
-            <Typography variant="body1" color="#fff" noWrap>
+            <Typography variant="body1" color="#2E186A" noWrap>
               <strong>Ship:</strong> Asia Liberty
             </Typography>
-            <Typography variant="body1" color="#fff" noWrap>
+            <Typography variant="body1" color="#2E186A" noWrap>
               <strong>IMO:</strong> 9752694
             </Typography>
-            <Typography variant="body1" color="#fff" noWrap>
+            <Typography variant="body1" color="#2E186A" noWrap>
               <strong>MMSI:</strong> 00000000
             </Typography>
-            <Typography variant="body1" color="#fff" noWrap>
+            <Typography variant="body1" color="#2E186A" noWrap>
               <strong>Call Sign:</strong> 000000000
             </Typography>
           </Box>
@@ -74,6 +74,7 @@ const RootLayout: React.FC = () => {
         variant="permanent"
         sx={{
           width: open ? drawerWidthOpen : drawerWidthClosed,
+          bgcolor: "#f9f9f9",
           flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: open ? drawerWidthOpen : drawerWidthClosed,
@@ -86,19 +87,19 @@ const RootLayout: React.FC = () => {
         <List>
           <ListItemButton>
             <ListItemIcon>
-              <HomeIcon />
+              <HomeIcon sx={{ color: "#2E186A" }} />
             </ListItemIcon>
             {open && <ListItemText primary="Home" />}
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon>
-              <AccountCircleIcon />
+              <AccountCircleIcon sx={{ color: "#2E186A" }} />
             </ListItemIcon>
             {open && <ListItemText primary="Profile" />}
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon>
-              <SettingsIcon />
+              <SettingsIcon sx={{ color: "#2E186A" }} />
             </ListItemIcon>
             {open && <ListItemText primary="Settings" />}
           </ListItemButton>

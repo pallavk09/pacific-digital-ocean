@@ -8,11 +8,11 @@ const NavigationItem = (props: any) => {
       justifyContent={"space-between"}
     >
       <Tooltip title="Sample title for tooltip" arrow>
-        <Box display={"flex"} flexDirection={"column"}>
-          <Typography variant="body2" fontSize={20}>
+        <Box display={"flex"} flexDirection={"column"} textAlign={"center"}>
+          <Typography variant="body2" fontSize={15}>
             <strong>{props.value}</strong>
           </Typography>
-          <Typography variant="body2" fontSize={10}>
+          <Typography variant="body2" fontSize={12}>
             {props.title}
           </Typography>
         </Box>
