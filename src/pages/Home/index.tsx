@@ -11,12 +11,16 @@ import {
   Typography,
   styled,
   keyframes,
+  Tooltip,
+  IconButton,
 } from "@mui/material";
 import CloudIcon from "@mui/icons-material/Cloud";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
 import BuildIcon from "@mui/icons-material/Build";
 import WarningIcon from "@mui/icons-material/Warning";
+import HelpIcon from "@mui/icons-material/Help";
+import InfoIcon from "@mui/icons-material/Info";
 
 import EngineTempreture from "../../components/Engine/EngineTempreture";
 import NavigationItem from "../../components/Navigation/NavigationItem";
@@ -28,6 +32,8 @@ import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
 import VoyageSectionBox from "../../components/VoyageSectionBox/NavSectionBox";
 import LiveVoyageBox from "../../components/LiveVoyageBox/NavSectionBox";
+import RouteChart from "../../components/RouteChart/RouteChart";
+import RouteNavigationBox from "../../components/RouteNavigationBox/RouteNavigationBox";
 
 const Home = () => {
   const plannedRoute: Array<[number, number]> = [
@@ -35,6 +41,12 @@ const Home = () => {
     [36.7783, -119.4179], // Midway point
     [34.0522, -118.2437], // Destination
   ];
+
+  const formula = `
+    Fuel Efficiency = Distance Traveled (nautical miles) / Fuel Consumed (tons or liters)
+    Or
+    Fuel Efficiency = (Cargo Weight (tons) × Distance Traveled (nautical miles)) / Fuel Consumed (tons)
+  `;
 
   const blinkAnimation = keyframes`
   0%, 100% { opacity: 1; }
@@ -607,7 +619,22 @@ const Home = () => {
                   <Typography variant="body2">
                     <strong>Remaining Fuel</strong>
                   </Typography>
-                  <Typography variant="body2">{"5000 Ltr"}</Typography>
+                  <Box
+                    display={"flex"}
+                    flexDirection="row"
+                    justifyContent={"space-between"}
+                    gap={1}
+                    pb={1}
+                  >
+                    <Typography variant="body2">{"5000 Ltr"}</Typography>
+                    <Box
+                      bgcolor={"#35821d"}
+                      sx={{ borderRadius: "10%" }}
+                      width={"40px"}
+                      height={"20px"}
+                      // p={0.5}
+                    ></Box>
+                  </Box>
                 </Box>
                 <Divider />
               </Box>
@@ -632,84 +659,36 @@ const Home = () => {
                   flexDirection="row"
                   justifyContent={"space-between"}
                 >
-                  <Typography variant="body2">
-                    <strong>Efficiency</strong>
-                  </Typography>
-                  <Typography variant="body2">{"30-10-2019 / 2000"}</Typography>
-                </Box>
-                <Divider />
-              </Box>
-            </Box>
-          </Paper>
+                  <Box
+                    display={"flex"}
+                    flexDirection="row"
+                    justifyContent={"flex-start"}
+                  >
+                    <Typography variant="body2">
+                      <strong>Efficiency</strong>
+                    </Typography>
+                    <Tooltip
+                      title={
+                        <Typography
+                          variant="body2"
+                          style={{
+                            color: "#FFF",
+                            backgroundColor: "#333",
+                            padding: "8px",
+                          }}
+                        >
+                          {formula}
+                        </Typography>
+                      }
+                      arrow
+                    >
+                      <InfoIcon style={{ height: "18px", cursor: "pointer" }} />
+                    </Tooltip>
+                  </Box>
 
-          <Paper
-            sx={{
-              boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
-              borderRadius: 1,
-              padding: (theme) => theme.spacing(1, 2),
-              width: "100%",
-              height: "auto",
-              margin: (theme) => theme.spacing(0.5),
-              bgcolor: "#f9f9f9",
-            }}
-          >
-            <Box display={"flex"} flexDirection="column" gap={2}>
-              <Box textAlign={"left"}>
-                <Typography variant="body2" fontSize={18} color="#FF825B">
-                  <strong>Route and Navigation</strong>
-                </Typography>
-              </Box>
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
                   <Typography variant="body2">
-                    <strong>Planned Route</strong>
+                    {"200,000 ton-miles per ton of fuel"}
                   </Typography>
-                  <Typography variant="body2">{"IN HZR"}</Typography>
-                </Box>
-                <Divider />
-              </Box>
-
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Typography variant="body2">
-                    <strong>Actual Route</strong>
-                  </Typography>
-                  <Typography variant="body2">{"HAZIRA"}</Typography>
-                </Box>
-                <Divider />
-              </Box>
-
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Typography variant="body2">
-                    <strong>Route Deviations</strong>
-                  </Typography>
-                  <Typography variant="body2">{"30-10-2019 / 2000"}</Typography>
-                </Box>
-                <Divider />
-              </Box>
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Typography variant="body2">
-                    <strong>Waypoint Updates</strong>
-                  </Typography>
-                  <Typography variant="body2">{"30-10-2019 / 2000"}</Typography>
                 </Box>
                 <Divider />
               </Box>
@@ -717,6 +696,103 @@ const Home = () => {
           </Paper>
         </Box>
       </LiveVoyageBox>
+
+      <RouteNavigationBox title="" flexDirection="row">
+        <Paper
+          sx={{
+            boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
+            borderRadius: 1,
+            padding: (theme) => theme.spacing(1, 2),
+            width: "40%",
+            height: "50%",
+            margin: (theme) => theme.spacing(0.5),
+            bgcolor: "#f9f9f9",
+          }}
+        >
+          <Box display={"flex"} flexDirection="column" gap={2}>
+            <Box textAlign={"left"}>
+              <Typography variant="body2" fontSize={18} color="#FF825B">
+                <strong>Route and Navigation</strong>
+              </Typography>
+            </Box>
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>Planned Route</strong>
+                </Typography>
+                <Typography variant="body2">{"IN HZR"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>Actual Route</strong>
+                </Typography>
+                <Typography variant="body2">{"HAZIRA"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            {/* <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>Route Deviations</strong>
+                </Typography>
+                <Typography variant="body2">{"30-10-2019 / 2000"}</Typography>
+              </Box>
+              <Divider />
+            </Box> */}
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>Waypoint Updates</strong>
+                </Typography>
+                <Typography variant="body2">{"30-10-2019 / 2000"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+          </Box>
+        </Paper>
+
+        <Paper
+          sx={{
+            boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
+            borderRadius: 1,
+            padding: (theme) => theme.spacing(1, 2),
+            width: "60%",
+            height: "50%",
+            margin: (theme) => theme.spacing(0.5),
+            bgcolor: "#f9f9f9",
+          }}
+        >
+          <Box display={"flex"} flexDirection="column" gap={2}>
+            <Box textAlign={"left"}>
+              <Typography variant="body2" fontSize={18} color="#FF825B">
+                <strong>Route Varience</strong>
+              </Typography>
+            </Box>
+            <RouteChart />
+          </Box>
+        </Paper>
+      </RouteNavigationBox>
 
       <SectionBox title="Auxillary Engine Tempreture">
         <Box display={"flex"} flexDirection={"row"}>
