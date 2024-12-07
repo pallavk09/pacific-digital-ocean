@@ -16,14 +16,14 @@ const EngineTempreture = (props: any) => {
       display={"flex"}
       flexDirection={"row"}
       justifyContent={"space-between"}
-      pb={3}
+      pb={1}
     >
       <Box
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"center"}
         alignItems={"center"}
-        gap={3}
+        gap={4}
       >
         <GaugeChart
           id="engine-temperature-gauge"
@@ -31,10 +31,11 @@ const EngineTempreture = (props: any) => {
           percent={props.temprature} // Dynamically updated temperature value (between 0 and 1)
           textColor="#000000" // Color of the text inside the gauge
           colors={["#a8e6cf", "#ffeb99", "#ff8b94"]} // Green, Yellow, Red
-          arcWidth={0.15} // Width of the gauge arc
+          arcWidth={0.2} // Width of the gauge arc
           needleColor="#e29578" // Needle color
           style={{
-            height: 100,
+            height: 80,
+            width: 210,
           }}
         />
         <Typography variant="h6">{props.title}</Typography>
