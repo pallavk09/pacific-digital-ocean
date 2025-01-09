@@ -198,8 +198,8 @@ const Home = () => {
     return () => clearInterval(routeUpdate);
   }, [plannedRoute]);
   return (
-    //================= DESIGN 2 ==============================
     <Box display={"flex"} flexDirection={"column"} gap={0} width={"auto"}>
+      {/* Navigation Details */}
       <NavSectionBox title="Navigation Details" flexDirection="row">
         <NavigationItem value={"01-11.60N"} title={"LAT"} />
         <NavigationItem value={"103-50.48E"} title={"LONG"} />
@@ -215,11 +215,12 @@ const Home = () => {
         <NavigationItem value={"2626"} title={"DISTANCE TO GO"} />
         <NavigationItem value={"88365"} title={"DISPLACEMENT"} />
       </NavSectionBox>
+      {/* Weather Details */}
       <NavSectionBox title="Weather Details" flexDirection="row">
-        <NavigationItem value={"4"} title={"SEA STATE"} />
         <NavigationItem value={"220"} title={"WIND DIRECTION"} />
         <NavigationItem value={"12"} title={"WIND SPEED"} />
-        <NavigationItem value={"2"} title={"WIND HEIGHT"} />
+        <NavigationItem value={"4"} title={"SEA STATE"} />
+        <NavigationItem value={"2"} title={"SEA HEIGHT"} />
         <NavigationItem value={"220"} title={"SEA DIRECTION"} />
         <NavigationItem value={"28"} title={"AMBIENT TEMP"} />
         <NavigationItem value={"46"} title={"WATER DEPTH"} />
@@ -227,628 +228,7 @@ const Home = () => {
         <NavigationItem value={"NNW"} title={"CURRENT DIRECTION"} />
         <NavigationItem value={"29.0"} title={"SW TEMP"} />
       </NavSectionBox>
-      <VoyageSectionBox title="" flexDirection="row">
-        <Paper
-          sx={{
-            boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
-            borderRadius: 1,
-            padding: (theme) => theme.spacing(1, 2),
-            width: "100%",
-            height: "auto",
-            margin: (theme) => theme.spacing(0.5),
-            bgcolor: "#f9f9f9",
-          }}
-        >
-          <Box display={"flex"} flexDirection="column" gap={2}>
-            <Box textAlign={"left"}>
-              <Typography variant="body2" fontSize={18} color="#FF825B">
-                <strong>{"ETA Details"}</strong>
-              </Typography>
-            </Box>
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>ETA Port Code</strong>
-                </Typography>
-                <Typography variant="body2">{"IN HZR"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>ETA Port</strong>
-                </Typography>
-                <Typography variant="body2">{"HAZIRA"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>ETA Date Time</strong>
-                </Typography>
-                <Typography variant="body2">{"30-10-2019 / 2000"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>ETA Offset</strong>
-                </Typography>
-                <Typography variant="body2">{"-5.5"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-          </Box>
-        </Paper>
-
-        <Paper
-          sx={{
-            boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
-            borderRadius: 1,
-            padding: (theme) => theme.spacing(1, 2),
-            width: "100%",
-            height: "auto",
-            margin: (theme) => theme.spacing(0.5),
-            bgcolor: "#f9f9f9",
-          }}
-        >
-          <Box display={"flex"} flexDirection="column" gap={2}>
-            <Box textAlign={"left"}>
-              <Typography variant="body2" fontSize={18} color="#FF825B">
-                <strong>{"ETB/DEP Details"}</strong>
-              </Typography>
-            </Box>
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>DEP Port Code</strong>
-                </Typography>
-                <Typography variant="body2">{"SG"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>DEP Port</strong>
-                </Typography>
-                <Typography variant="body2">{"SINGAPORE"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>ETB Date Time</strong>
-                </Typography>
-                <Typography variant="body2">{"TBA"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>ETB Offset</strong>
-                </Typography>
-                <Typography variant="body2">{"-5.5"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-          </Box>
-        </Paper>
-
-        <Paper
-          sx={{
-            boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
-            borderRadius: 1,
-            padding: (theme) => theme.spacing(1, 2),
-            width: "100%",
-            height: "auto",
-            margin: (theme) => theme.spacing(0.5),
-            bgcolor: "#f9f9f9",
-          }}
-        >
-          <Box display={"flex"} flexDirection="column" gap={2}>
-            <Box textAlign={"left"}>
-              <Typography variant="body2" fontSize={18} color="#FF825B">
-                <strong>{"ETD and Delays"}</strong>
-              </Typography>
-            </Box>
-
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>ETD Date Time</strong>
-                </Typography>
-                <Typography variant="body2">{"TBA"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>ETD Offset</strong>
-                </Typography>
-                <Typography variant="body2">{"-5.5"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>DELAY REASON</strong>
-                </Typography>
-                <Typography variant="body2">{"DISCHARGING"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>DELAY TYPE</strong>
-                </Typography>
-                <Typography variant="body2">{"NIL"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-          </Box>
-        </Paper>
-
-        {/* <NavigationItem value={"IN HZR"} title={"ETA PORT CODE"} />
-        <NavigationItem value={"HAZIRA"} title={"ETA PORT"} />
-        <NavigationItem value={"30-10-2019 / 2000"} title={"ETA DATE TIME"} />
-        <NavigationItem value={"-5.5"} title={"ETA DATE TIME OFFSET"} />
-        <NavigationItem value={"SG"} title={"DEP PORT CODE"} />
-        <NavigationItem value={"SINGAPORE"} title={"DEP PORT"} />
-
-        <NavigationItem value={"TBA"} title={"ETB DATE TIME"} />
-        <NavigationItem value={"-5.5"} title={"ETB DATE TIME OFFSET"} />
-        <NavigationItem value={"TBA"} title={"ETD DATE TIME"} />
-        <NavigationItem value={"-5.5"} title={"ETD DATE TIME OFFSET"} />
-        <NavigationItem value={"DISCHARGING"} title={"REASON"} />
-        <NavigationItem value={"NIL"} title={"TYPE OF DELAY"} /> */}
-      </VoyageSectionBox>
-
-      <LiveVoyageBox title="" flexDirection="row">
-        {/* <Box sx={{ marginTop: "0px" }}> */}
-        <VesselMap plannedRoute={plannedRoute} actualRoute={actualRoute} />
-        {/* </Box> */}
-        <Box
-          display={"flex"}
-          flexDirection="column"
-          gap={2}
-          height={"auto"}
-          width={"40%"}
-        >
-          <Paper
-            sx={{
-              boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
-              borderRadius: 1,
-              padding: (theme) => theme.spacing(1, 2),
-              width: "100%",
-              height: "auto",
-              margin: (theme) => theme.spacing(0.5),
-              bgcolor: "#f9f9f9",
-            }}
-          >
-            <Box
-              display={"flex"}
-              flexDirection="row"
-              justifyContent={"space-between"}
-              gap={2}
-            >
-              <Typography variant="body2" fontSize={18} color="#FF825B">
-                <strong>Compliance Status</strong>
-              </Typography>
-              <BlinkingWrapper>
-                <Box
-                  bgcolor={"#e6697f"}
-                  sx={{ borderRadius: "100%" }}
-                  width={"20px"}
-                  height={"20px"}
-                  p={1}
-                ></Box>
-              </BlinkingWrapper>
-            </Box>
-          </Paper>
-
-          <Paper
-            sx={{
-              boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
-              borderRadius: 1,
-              padding: (theme) => theme.spacing(1, 2),
-              width: "100%",
-              height: "auto",
-              margin: (theme) => theme.spacing(0.5),
-              bgcolor: "#f9f9f9",
-            }}
-          >
-            <Box display={"flex"} flexDirection="column" gap={2}>
-              <Box textAlign={"left"}>
-                <Typography variant="body2" fontSize={18} color="#FF825B">
-                  <strong>Alerts and Notifications</strong>
-                </Typography>
-              </Box>
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Typography variant="body2">
-                    {<LocalGasStationIcon />}
-                  </Typography>
-                  <BlinkingWrapper>
-                    <Typography variant="body2" color="#e6697f">
-                      <strong>LOW</strong>
-                    </Typography>
-                  </BlinkingWrapper>
-                </Box>
-                <Divider />
-              </Box>
-
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Typography variant="body2">{<LocationOnIcon />}</Typography>
-                  <Typography variant="body2">{"1"}</Typography>
-                </Box>
-                <Divider />
-              </Box>
-
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Typography variant="body2">{<CloudIcon />}</Typography>
-                  <Typography variant="body2">{2}</Typography>
-                </Box>
-                <Divider />
-              </Box>
-
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Typography variant="body2">{<BuildIcon />}</Typography>
-                  <BlinkingWrapper>
-                    {<WarningIcon style={{ color: "#FF4136", fontSize: 20 }} />}
-                  </BlinkingWrapper>
-                </Box>
-                <Divider />
-              </Box>
-            </Box>
-          </Paper>
-
-          <Paper
-            sx={{
-              boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
-              borderRadius: 1,
-              padding: (theme) => theme.spacing(1, 2),
-              width: "100%",
-              height: "auto",
-              margin: (theme) => theme.spacing(0.5),
-              bgcolor: "#f9f9f9",
-            }}
-          >
-            <Box display={"flex"} flexDirection="column" gap={2}>
-              <Box textAlign={"left"}>
-                <Typography variant="body2" fontSize={18} color="#FF825B">
-                  <strong>Cargo Information</strong>
-                </Typography>
-              </Box>
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Typography variant="body2">
-                    <strong>Type</strong>
-                  </Typography>
-                  <Typography variant="body2">{"Electronics"}</Typography>
-                </Box>
-                <Divider />
-              </Box>
-
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Typography variant="body2">
-                    <strong>Weight</strong>
-                  </Typography>
-                  <Typography variant="body2">{"25000 Tons"}</Typography>
-                </Box>
-                <Divider />
-              </Box>
-
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Typography variant="body2">
-                    <strong>Destination</strong>
-                  </Typography>
-                  <Typography variant="body2">{"Shanghai, China"}</Typography>
-                </Box>
-                <Divider />
-              </Box>
-            </Box>
-          </Paper>
-
-          <Paper
-            sx={{
-              boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
-              borderRadius: 1,
-              padding: (theme) => theme.spacing(1, 2),
-              width: "100%",
-              height: "auto",
-              margin: (theme) => theme.spacing(0.5),
-              bgcolor: "#f9f9f9",
-            }}
-          >
-            <Box display={"flex"} flexDirection="column" gap={2}>
-              <Box textAlign={"left"}>
-                <Typography variant="body2" fontSize={18} color="#FF825B">
-                  <strong>Fuel Status</strong>
-                </Typography>
-              </Box>
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Typography variant="body2">
-                    <strong>Remaining Fuel</strong>
-                  </Typography>
-                  <Box
-                    display={"flex"}
-                    flexDirection="row"
-                    justifyContent={"space-between"}
-                    gap={1}
-                    pb={1}
-                  >
-                    <Typography variant="body2">{"5000 Ltr"}</Typography>
-                    <Box
-                      bgcolor={"#35821d"}
-                      sx={{ borderRadius: "10%" }}
-                      width={"40px"}
-                      height={"20px"}
-                      // p={0.5}
-                    ></Box>
-                  </Box>
-                </Box>
-                <Divider />
-              </Box>
-
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Typography variant="body2">
-                    <strong>Consumption Rate</strong>
-                  </Typography>
-                  <Typography variant="body2">{"350 Ltr/Hr"}</Typography>
-                </Box>
-                <Divider />
-              </Box>
-
-              <Box display={"flex"} flexDirection="column" gap={0}>
-                <Box
-                  display={"flex"}
-                  flexDirection="row"
-                  justifyContent={"space-between"}
-                >
-                  <Box
-                    display={"flex"}
-                    flexDirection="row"
-                    justifyContent={"flex-start"}
-                  >
-                    <Typography variant="body2">
-                      <strong>Efficiency</strong>
-                    </Typography>
-                    <Tooltip
-                      title={
-                        <Typography
-                          variant="body2"
-                          style={{
-                            color: "#FFF",
-                            backgroundColor: "#333",
-                            padding: "8px",
-                          }}
-                        >
-                          {formula}
-                        </Typography>
-                      }
-                      arrow
-                    >
-                      <InfoIcon style={{ height: "18px", cursor: "pointer" }} />
-                    </Tooltip>
-                  </Box>
-
-                  <Typography variant="body2">
-                    {"200,000 ton-miles per ton of fuel"}
-                  </Typography>
-                </Box>
-                <Divider />
-              </Box>
-            </Box>
-          </Paper>
-        </Box>
-      </LiveVoyageBox>
-
-      <RouteNavigationBox title="" flexDirection="row">
-        <Paper
-          sx={{
-            boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
-            borderRadius: 1,
-            padding: (theme) => theme.spacing(1, 2),
-            width: "40%",
-            height: "50%",
-            margin: (theme) => theme.spacing(0.5),
-            bgcolor: "#f9f9f9",
-          }}
-        >
-          <Box display={"flex"} flexDirection="column" gap={2}>
-            <Box textAlign={"left"}>
-              <Typography variant="body2" fontSize={18} color="#FF825B">
-                <strong>Route and Navigation</strong>
-              </Typography>
-            </Box>
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>Planned Route</strong>
-                </Typography>
-                <Typography variant="body2">{"IN HZR"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>Actual Route</strong>
-                </Typography>
-                <Typography variant="body2">{"HAZIRA"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-
-            {/* <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>Route Deviations</strong>
-                </Typography>
-                <Typography variant="body2">{"30-10-2019 / 2000"}</Typography>
-              </Box>
-              <Divider />
-            </Box> */}
-            <Box display={"flex"} flexDirection="column" gap={0}>
-              <Box
-                display={"flex"}
-                flexDirection="row"
-                justifyContent={"space-between"}
-              >
-                <Typography variant="body2">
-                  <strong>Waypoint Updates</strong>
-                </Typography>
-                <Typography variant="body2">{"30-10-2019 / 2000"}</Typography>
-              </Box>
-              <Divider />
-            </Box>
-          </Box>
-        </Paper>
-
-        <Paper
-          sx={{
-            boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
-            borderRadius: 1,
-            padding: (theme) => theme.spacing(1, 2),
-            width: "60%",
-            height: "50%",
-            margin: (theme) => theme.spacing(0.5),
-            bgcolor: "#f9f9f9",
-          }}
-        >
-          <Box display={"flex"} flexDirection="column" gap={2}>
-            <Box textAlign={"left"}>
-              <Typography variant="body2" fontSize={18} color="#FF825B">
-                <strong>Route Varience</strong>
-              </Typography>
-            </Box>
-            <RouteChart />
-          </Box>
-        </Paper>
-      </RouteNavigationBox>
-
+      {/* Main Engine, Aux Engine, DG Set */}
       <EngineSectionBox title="" flexDirection="row">
         {/* Main */}
         <Paper
@@ -1429,7 +809,626 @@ const Home = () => {
           </Box>
         </Paper>
       </EngineSectionBox>
+      <LiveVoyageBox title="" flexDirection="row">
+        {/* <Box sx={{ marginTop: "0px" }}> */}
+        <VesselMap plannedRoute={plannedRoute} actualRoute={actualRoute} />
+        {/* </Box> */}
+        <Box
+          display={"flex"}
+          flexDirection="column"
+          gap={2}
+          height={"auto"}
+          width={"40%"}
+        >
+          <Paper
+            sx={{
+              boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
+              borderRadius: 1,
+              padding: (theme) => theme.spacing(1, 2),
+              width: "100%",
+              height: "auto",
+              margin: (theme) => theme.spacing(0.5),
+              bgcolor: "#f9f9f9",
+            }}
+          >
+            <Box
+              display={"flex"}
+              flexDirection="row"
+              justifyContent={"space-between"}
+              gap={2}
+            >
+              <Typography variant="body2" fontSize={18} color="#FF825B">
+                <strong>Compliance Status</strong>
+              </Typography>
+              <BlinkingWrapper>
+                <Box
+                  bgcolor={"#e6697f"}
+                  sx={{ borderRadius: "100%" }}
+                  width={"20px"}
+                  height={"20px"}
+                  p={1}
+                ></Box>
+              </BlinkingWrapper>
+            </Box>
+          </Paper>
 
+          <Paper
+            sx={{
+              boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
+              borderRadius: 1,
+              padding: (theme) => theme.spacing(1, 2),
+              width: "100%",
+              height: "auto",
+              margin: (theme) => theme.spacing(0.5),
+              bgcolor: "#f9f9f9",
+            }}
+          >
+            <Box display={"flex"} flexDirection="column" gap={2}>
+              <Box textAlign={"left"}>
+                <Typography variant="body2" fontSize={18} color="#FF825B">
+                  <strong>Alerts and Notifications</strong>
+                </Typography>
+              </Box>
+              <Box display={"flex"} flexDirection="column" gap={0}>
+                <Box
+                  display={"flex"}
+                  flexDirection="row"
+                  justifyContent={"space-between"}
+                >
+                  <Typography variant="body2">
+                    {<LocalGasStationIcon />}
+                  </Typography>
+                  <BlinkingWrapper>
+                    <Typography variant="body2" color="#e6697f">
+                      <strong>LOW</strong>
+                    </Typography>
+                  </BlinkingWrapper>
+                </Box>
+                <Divider />
+              </Box>
+
+              <Box display={"flex"} flexDirection="column" gap={0}>
+                <Box
+                  display={"flex"}
+                  flexDirection="row"
+                  justifyContent={"space-between"}
+                >
+                  <Typography variant="body2">{<LocationOnIcon />}</Typography>
+                  <Typography variant="body2">{"1"}</Typography>
+                </Box>
+                <Divider />
+              </Box>
+
+              <Box display={"flex"} flexDirection="column" gap={0}>
+                <Box
+                  display={"flex"}
+                  flexDirection="row"
+                  justifyContent={"space-between"}
+                >
+                  <Typography variant="body2">{<CloudIcon />}</Typography>
+                  <Typography variant="body2">{2}</Typography>
+                </Box>
+                <Divider />
+              </Box>
+
+              <Box display={"flex"} flexDirection="column" gap={0}>
+                <Box
+                  display={"flex"}
+                  flexDirection="row"
+                  justifyContent={"space-between"}
+                >
+                  <Typography variant="body2">{<BuildIcon />}</Typography>
+                  <BlinkingWrapper>
+                    {<WarningIcon style={{ color: "#FF4136", fontSize: 20 }} />}
+                  </BlinkingWrapper>
+                </Box>
+                <Divider />
+              </Box>
+            </Box>
+          </Paper>
+
+          <Paper
+            sx={{
+              boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
+              borderRadius: 1,
+              padding: (theme) => theme.spacing(1, 2),
+              width: "100%",
+              height: "auto",
+              margin: (theme) => theme.spacing(0.5),
+              bgcolor: "#f9f9f9",
+            }}
+          >
+            <Box display={"flex"} flexDirection="column" gap={2}>
+              <Box textAlign={"left"}>
+                <Typography variant="body2" fontSize={18} color="#FF825B">
+                  <strong>Cargo Information</strong>
+                </Typography>
+              </Box>
+              <Box display={"flex"} flexDirection="column" gap={0}>
+                <Box
+                  display={"flex"}
+                  flexDirection="row"
+                  justifyContent={"space-between"}
+                >
+                  <Typography variant="body2">
+                    <strong>Type</strong>
+                  </Typography>
+                  <Typography variant="body2">{"Electronics"}</Typography>
+                </Box>
+                <Divider />
+              </Box>
+
+              <Box display={"flex"} flexDirection="column" gap={0}>
+                <Box
+                  display={"flex"}
+                  flexDirection="row"
+                  justifyContent={"space-between"}
+                >
+                  <Typography variant="body2">
+                    <strong>Weight</strong>
+                  </Typography>
+                  <Typography variant="body2">{"25000 Tons"}</Typography>
+                </Box>
+                <Divider />
+              </Box>
+
+              <Box display={"flex"} flexDirection="column" gap={0}>
+                <Box
+                  display={"flex"}
+                  flexDirection="row"
+                  justifyContent={"space-between"}
+                >
+                  <Typography variant="body2">
+                    <strong>Destination</strong>
+                  </Typography>
+                  <Typography variant="body2">{"Shanghai, China"}</Typography>
+                </Box>
+                <Divider />
+              </Box>
+            </Box>
+          </Paper>
+
+          <Paper
+            sx={{
+              boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
+              borderRadius: 1,
+              padding: (theme) => theme.spacing(1, 2),
+              width: "100%",
+              height: "auto",
+              margin: (theme) => theme.spacing(0.5),
+              bgcolor: "#f9f9f9",
+            }}
+          >
+            <Box display={"flex"} flexDirection="column" gap={2}>
+              <Box textAlign={"left"}>
+                <Typography variant="body2" fontSize={18} color="#FF825B">
+                  <strong>Fuel Status</strong>
+                </Typography>
+              </Box>
+              <Box display={"flex"} flexDirection="column" gap={0}>
+                <Box
+                  display={"flex"}
+                  flexDirection="row"
+                  justifyContent={"space-between"}
+                >
+                  <Typography variant="body2">
+                    <strong>Remaining Fuel</strong>
+                  </Typography>
+                  <Box
+                    display={"flex"}
+                    flexDirection="row"
+                    justifyContent={"space-between"}
+                    gap={1}
+                    pb={1}
+                  >
+                    <Typography variant="body2">{"5000 Ltr"}</Typography>
+                    <Box
+                      bgcolor={"#35821d"}
+                      sx={{ borderRadius: "10%" }}
+                      width={"40px"}
+                      height={"20px"}
+                      // p={0.5}
+                    ></Box>
+                  </Box>
+                </Box>
+                <Divider />
+              </Box>
+
+              <Box display={"flex"} flexDirection="column" gap={0}>
+                <Box
+                  display={"flex"}
+                  flexDirection="row"
+                  justifyContent={"space-between"}
+                >
+                  <Typography variant="body2">
+                    <strong>Consumption Rate</strong>
+                  </Typography>
+                  <Typography variant="body2">{"350 Ltr/Hr"}</Typography>
+                </Box>
+                <Divider />
+              </Box>
+
+              <Box display={"flex"} flexDirection="column" gap={0}>
+                <Box
+                  display={"flex"}
+                  flexDirection="row"
+                  justifyContent={"space-between"}
+                >
+                  <Box
+                    display={"flex"}
+                    flexDirection="row"
+                    justifyContent={"flex-start"}
+                  >
+                    <Typography variant="body2">
+                      <strong>Efficiency</strong>
+                    </Typography>
+                    <Tooltip
+                      title={
+                        <Typography
+                          variant="body2"
+                          style={{
+                            color: "#FFF",
+                            backgroundColor: "#333",
+                            padding: "8px",
+                          }}
+                        >
+                          {formula}
+                        </Typography>
+                      }
+                      arrow
+                    >
+                      <InfoIcon style={{ height: "18px", cursor: "pointer" }} />
+                    </Tooltip>
+                  </Box>
+
+                  <Typography variant="body2">
+                    {"200,000 ton-miles per ton of fuel"}
+                  </Typography>
+                </Box>
+                <Divider />
+              </Box>
+            </Box>
+          </Paper>
+        </Box>
+      </LiveVoyageBox>
+      {/* ETA Details,ETB/DEP Details, ETD and Delays */}
+      <VoyageSectionBox title="" flexDirection="row">
+        <Paper
+          sx={{
+            boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
+            borderRadius: 1,
+            padding: (theme) => theme.spacing(1, 2),
+            width: "100%",
+            height: "auto",
+            margin: (theme) => theme.spacing(0.5),
+            bgcolor: "#f9f9f9",
+          }}
+        >
+          <Box display={"flex"} flexDirection="column" gap={2}>
+            <Box textAlign={"left"}>
+              <Typography variant="body2" fontSize={18} color="#FF825B">
+                <strong>{"ETA Details"}</strong>
+              </Typography>
+            </Box>
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>ETA Port Code</strong>
+                </Typography>
+                <Typography variant="body2">{"IN HZR"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>ETA Port</strong>
+                </Typography>
+                <Typography variant="body2">{"HAZIRA"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>ETA Date Time</strong>
+                </Typography>
+                <Typography variant="body2">{"30-10-2019 / 2000"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>ETA Offset</strong>
+                </Typography>
+                <Typography variant="body2">{"-5.5"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+          </Box>
+        </Paper>
+
+        <Paper
+          sx={{
+            boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
+            borderRadius: 1,
+            padding: (theme) => theme.spacing(1, 2),
+            width: "100%",
+            height: "auto",
+            margin: (theme) => theme.spacing(0.5),
+            bgcolor: "#f9f9f9",
+          }}
+        >
+          <Box display={"flex"} flexDirection="column" gap={2}>
+            <Box textAlign={"left"}>
+              <Typography variant="body2" fontSize={18} color="#FF825B">
+                <strong>{"ETB/DEP Details"}</strong>
+              </Typography>
+            </Box>
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>DEP Port Code</strong>
+                </Typography>
+                <Typography variant="body2">{"SG"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>DEP Port</strong>
+                </Typography>
+                <Typography variant="body2">{"SINGAPORE"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>ETB Date Time</strong>
+                </Typography>
+                <Typography variant="body2">{"TBA"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>ETB Offset</strong>
+                </Typography>
+                <Typography variant="body2">{"-5.5"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+          </Box>
+        </Paper>
+
+        <Paper
+          sx={{
+            boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
+            borderRadius: 1,
+            padding: (theme) => theme.spacing(1, 2),
+            width: "100%",
+            height: "auto",
+            margin: (theme) => theme.spacing(0.5),
+            bgcolor: "#f9f9f9",
+          }}
+        >
+          <Box display={"flex"} flexDirection="column" gap={2}>
+            <Box textAlign={"left"}>
+              <Typography variant="body2" fontSize={18} color="#FF825B">
+                <strong>{"ETD and Delays"}</strong>
+              </Typography>
+            </Box>
+
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>ETD Date Time</strong>
+                </Typography>
+                <Typography variant="body2">{"TBA"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>ETD Offset</strong>
+                </Typography>
+                <Typography variant="body2">{"-5.5"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>DELAY REASON</strong>
+                </Typography>
+                <Typography variant="body2">{"DISCHARGING"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>DELAY TYPE</strong>
+                </Typography>
+                <Typography variant="body2">{"NIL"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+          </Box>
+        </Paper>
+
+        {/* <NavigationItem value={"IN HZR"} title={"ETA PORT CODE"} />
+        <NavigationItem value={"HAZIRA"} title={"ETA PORT"} />
+        <NavigationItem value={"30-10-2019 / 2000"} title={"ETA DATE TIME"} />
+        <NavigationItem value={"-5.5"} title={"ETA DATE TIME OFFSET"} />
+        <NavigationItem value={"SG"} title={"DEP PORT CODE"} />
+        <NavigationItem value={"SINGAPORE"} title={"DEP PORT"} />
+
+        <NavigationItem value={"TBA"} title={"ETB DATE TIME"} />
+        <NavigationItem value={"-5.5"} title={"ETB DATE TIME OFFSET"} />
+        <NavigationItem value={"TBA"} title={"ETD DATE TIME"} />
+        <NavigationItem value={"-5.5"} title={"ETD DATE TIME OFFSET"} />
+        <NavigationItem value={"DISCHARGING"} title={"REASON"} />
+        <NavigationItem value={"NIL"} title={"TYPE OF DELAY"} /> */}
+      </VoyageSectionBox>
+      <RouteNavigationBox title="" flexDirection="row">
+        <Paper
+          sx={{
+            boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
+            borderRadius: 1,
+            padding: (theme) => theme.spacing(1, 2),
+            width: "40%",
+            height: "50%",
+            margin: (theme) => theme.spacing(0.5),
+            bgcolor: "#f9f9f9",
+          }}
+        >
+          <Box display={"flex"} flexDirection="column" gap={2}>
+            <Box textAlign={"left"}>
+              <Typography variant="body2" fontSize={18} color="#FF825B">
+                <strong>Route and Navigation</strong>
+              </Typography>
+            </Box>
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>Planned Route</strong>
+                </Typography>
+                <Typography variant="body2">{"IN HZR"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>Actual Route</strong>
+                </Typography>
+                <Typography variant="body2">{"HAZIRA"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+
+            {/* <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>Route Deviations</strong>
+                </Typography>
+                <Typography variant="body2">{"30-10-2019 / 2000"}</Typography>
+              </Box>
+              <Divider />
+            </Box> */}
+            <Box display={"flex"} flexDirection="column" gap={0}>
+              <Box
+                display={"flex"}
+                flexDirection="row"
+                justifyContent={"space-between"}
+              >
+                <Typography variant="body2">
+                  <strong>Waypoint Updates</strong>
+                </Typography>
+                <Typography variant="body2">{"30-10-2019 / 2000"}</Typography>
+              </Box>
+              <Divider />
+            </Box>
+          </Box>
+        </Paper>
+
+        <Paper
+          sx={{
+            boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)",
+            borderRadius: 1,
+            padding: (theme) => theme.spacing(1, 2),
+            width: "60%",
+            height: "50%",
+            margin: (theme) => theme.spacing(0.5),
+            bgcolor: "#f9f9f9",
+          }}
+        >
+          <Box display={"flex"} flexDirection="column" gap={2}>
+            <Box textAlign={"left"}>
+              <Typography variant="body2" fontSize={18} color="#FF825B">
+                <strong>Route Varience</strong>
+              </Typography>
+            </Box>
+            <RouteChart />
+          </Box>
+        </Paper>
+      </RouteNavigationBox>
       {/* <EngineSectionBox title="">
         <Paper
           sx={{

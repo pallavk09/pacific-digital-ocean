@@ -18,8 +18,9 @@ import {
   AccountCircle as AccountCircleIcon,
   Settings as SettingsIcon,
 } from "@mui/icons-material";
+import CompareIcon from "@mui/icons-material/Compare";
 import { Box } from "@mui/system";
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const drawerWidthOpen = 240;
 const drawerWidthClosed = 60;
@@ -54,13 +55,20 @@ const RootLayout: React.FC = () => {
             p={2}
           >
             <Typography variant="body1" color="#2E186A" noWrap>
-              <strong>Ship:</strong> Asia Liberty
+              <strong>Ship Name:</strong> Ship1
             </Typography>
             <Typography variant="body1" color="#2E186A" noWrap>
-              <strong>IMO:</strong> 9752694
+              <strong>Ship Type:</strong> General Cargo Ship
+            </Typography>
+            <Typography variant="body1" color="#2E186A" noWrap>
+              <strong>IMO:</strong> 1234567
             </Typography>
             <Typography variant="body1" color="#2E186A" noWrap>
               <strong>MMSI:</strong> 00000000
+            </Typography>
+
+            <Typography variant="body1" color="#2E186A" noWrap>
+              <strong>Dead Weight:</strong> xxxxxx
             </Typography>
             <Typography variant="body1" color="#2E186A" noWrap>
               <strong>Call Sign:</strong> 000000000
@@ -87,15 +95,28 @@ const RootLayout: React.FC = () => {
         <List>
           <ListItemButton>
             <ListItemIcon>
-              <HomeIcon sx={{ color: "#2E186A" }} />
+              <NavLink to={"/"}>
+                <HomeIcon sx={{ color: "#2E186A" }} />
+              </NavLink>
             </ListItemIcon>
-            {open && <ListItemText primary="Home" />}
+            {open && (
+              <NavLink to={"/"}>
+                <ListItemText primary="Home" />
+              </NavLink>
+            )}
           </ListItemButton>
+
           <ListItemButton>
             <ListItemIcon>
-              <AccountCircleIcon sx={{ color: "#2E186A" }} />
+              <NavLink to={"/compare"}>
+                <CompareIcon sx={{ color: "#2E186A" }} />
+              </NavLink>
             </ListItemIcon>
-            {open && <ListItemText primary="Profile" />}
+            {open && (
+              <NavLink to={"/"}>
+                <ListItemText primary="Noon Vs Actual" />
+              </NavLink>
+            )}
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon>

@@ -38,6 +38,8 @@ const RouteChart = () => {
     actualLocation: actualRouteData[index]?.name || null,
   }));
 
+  console.log(combinedData);
+
   return (
     // <Box>
     //   <Typography variant="h6" gutterBottom>
